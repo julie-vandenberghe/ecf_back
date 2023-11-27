@@ -9,7 +9,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'matelas' => Matelas::latest('id')->limit(4)->get(),
+            'matelas' => Matelas::latest('updated_at')->limit(3)->get(),
         ]);
     }
 }

@@ -33,21 +33,24 @@ class MatelasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            /* 'name' => 'required|unique:matelas',
-            'content' => 'required|between:50,10000',
+            'name' => 'required',
+            'brand' => 'required',
+            'size' => 'required',
             'image' => 'required|url',
-            'active' => 'boolean',
-            'company' => 'required',
-            'genres' => 'required|array',
-            'genres.*' => 'required|in:'.implode(',', ['Aventure', 'Beat \'em up', 'FPS', 'MMO', 'RPG']),
-            'released_at' => 'required|date',
-            'platforms' => 'required|array',
-            'platforms.*' => 'required|exists:platforms,id', */
+            'price' => 'required',
+            'discount_price' => 'nullable',
+            /*'genres.*' => 'required|in:'.implode(',', ['Aventure', 'Beat \'em up', 'FPS', 'MMO', 'RPG']),*/
+            /*'platforms' => 'required|array',*/
+            /*'platforms.*' => 'required|exists:platforms,id', */
         ]);
 
         $matelas = new Matelas();
         $matelas->name = $request->name;
+        $matelas->brand = $request->brand;
+        $matelas->size = $request->size;
         $matelas->image = $request->image;
+        $matelas->price = $request->price;
+        $matelas->discount_price = $request->discount_price;
         $matelas->save();
     
 
