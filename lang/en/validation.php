@@ -190,6 +190,7 @@ return [
         'title' => 'titre',
         'brand' => 'marque',
         'size' => 'taille',
+        'price' => 'prix',
     ],
 
 ];
