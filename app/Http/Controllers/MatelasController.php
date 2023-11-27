@@ -27,19 +27,22 @@ class MatelasController extends Controller
 
     public function create()
     {
-        return view('matelas/create');
+        return view('matelas/create', [
+            'brand' => ['BULTEX', 'DORSOLINE', 'DREAMWAY', 'EPEDA', 'MEMORYLINE'],
+            'size' => ['90x190', '140x190', '160x200', '180x200', '200x200'],
+        ]);
     }
 
     public function store(Request $request)
     {
+
         $request->validate([
             'name' => 'required',
-            'brand' => 'required',
-            'size' => 'required',
+            'brand' => 'required|in:BULTEX,DORSOLINE,DREAMWAY,EPEDA,MEMORYLINE',
+            'size' => 'required|in:90x190,140x190,160x200,180x200,200x200',
             'image' => 'required|url',
             'price' => 'required',
             'discount_price' => 'nullable',
-            /*'genres.*' => 'required|in:'.implode(',', ['Aventure', 'Beat \'em up', 'FPS', 'MMO', 'RPG']),*/
             /*'platforms' => 'required|array',*/
             /*'platforms.*' => 'required|exists:platforms,id', */
         ]);
@@ -50,7 +53,7 @@ class MatelasController extends Controller
         $matelas->size = $request->size;
         $matelas->image = $request->image;
         $matelas->price = $request->price;
-        $matelas->discount_price = $request->discount_price;
+        $matelas->discount_price = $request->input('discount_price', null);;
         $matelas->save();
     
 
