@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="mb-4 text-4xl font-extrabold">Les derniers matelas modifiés</h1>
+<h1 class="mb-4 text-4xl font-extrabold">{{ $title }}</h1>
 
     @if (session('message'))
         <p class="rounded shadow text-green-800 bg-green-300 text-center p-2 mb-9">
@@ -20,25 +20,27 @@
                     </a>
                 </div>
                 <div class="w-2/3 px-10 text-center">
-                    <p class="pt-2">
+                    <h2 class="text-2xl font-bold text-[#144284] pt-4 pb-4">{{ $mattress->name }}</h2>
+                    <p class="mb-2">
                         <strong>Marque : </strong>{{$mattress->brand}}
                     </p>
-                    <h2 class="text-xl font-bold">{{ $mattress->name }}</h2>
+                    <p class="mb-2">
+                        <strong>Taille : </strong>{{$mattress->brand}}
+                    </p>
+                    
                     @if ($mattress->discount_price > 0) 
-                        <p class="line-through">{{$mattress->price}} €</p>
-                        <p class="font-bold text-red-600">{{$mattress->discount_price}}  €</p>
+                        <p class="mb-2"><strong>Prix d'origine : </strong><span class="line-through">{{$mattress->price}} €</span></p>
+                        <p class="mb-2"><strong>Prix remisé : </strong><span class="text-red-600">{{$mattress->discount_price}}  €</p>
                     @else
-                    <p class="">{{$mattress->price}} €</p>       
+                    <p class="mb-2"><strong>Prix : </strong>{{$mattress->price}} €</p>       
                     @endif  
-                <p class="">
-                    <strong>Taille : </strong>{{$mattress->brand}}
-                </p>
+               
                 <div class="flex justify-evenly gap-5 mt-10 pb-2">
                     {{--  @if ($mattress->active) --}}
                      <a href="/matelas/{{ $mattress->id }}/modifier" title="Modifier">
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                              <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                         </svg>
+                         </svg> 
                      </a>
                      <a href="/matelas/{{ $mattress->id }}/supprimer" title="Supprimer">
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

@@ -63,7 +63,7 @@
                     <input type="text" name="discount_price" class="border-0 border-b focus:ring-0 w-full"  value="">
                 </div>
         
-                <div class="container mx-0 min-w-full flex flex-col items-center">
+                <div class="flex flex-col items-center">
                     <button class="mt-10 py-2 px-4 text-white bg-gray-900 rounded-xl hover:bg-gray-700 duration-200">Sauvegarder</button>
                 </div>
             </form>

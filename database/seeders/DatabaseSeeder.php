@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Matelas Confort+',
             'brand' => 'EPEDA',
             'size' => '90x190',
-            'image' => 'storage/uploads/EPEDA.png',
+            'image' => 'https://cdn.laredoute.com/products/7/5/6/7564fcca940d6755f6c057a24d335891.jpg?width=1200&dpr=1',
             'price' => '759.00',
             'discount_price' => '529.00',
         ]);
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Matelas Assurance',
             'brand' => 'DREAMWAY',
             'size' => '90x190',
-            'image' => 'storage/uploads/EPEDA.png',
+            'image' => 'https://cdn.laredoute.com/products/5/1/7/517d0a25c5439c7a7626a9d4d25e3e33.jpg?width=1200&dpr=1',
             'price' => '809.00',
             'discount_price' => '709.00',
         ]);
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Matelas Essentiel',
             'brand' => 'BULTEX',
             'size' => '140x190',
-            'image' => 'storage/uploads/EPEDA.png',
+            'image' => 'https://cdn.laredoute.com/products/3/4/7/347fb06cc24d280c51b2050c04439136.jpg?width=1200&dpr=1',
             'price' => '759.00',
             'discount_price' => '529.00',
         ]);
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Matelas Prestige',
             'brand' => 'EPEDA',
             'size' => '160x200',
-            'image' => 'storage/uploads/EPEDA.png',
+            'image' => 'https://media.literieprivee.com/904-large_default/matelas-memoire-de-forme-bultex-body-up-160x200.jpg',
             'price' => '1019.00',
             'discount_price' => '0',
         ]);

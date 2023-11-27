@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('size');
             $table->string('image');
             $table->float('price');
-            $table->float('discount_price'); //@todo ajouter ->nullable();
+            $table->float('discount_price')->nullable();
             $table->timestamps();
         });
     }

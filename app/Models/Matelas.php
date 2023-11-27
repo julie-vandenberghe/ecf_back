@@ -9,4 +9,12 @@ class Matelas extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['image'];
+
+
+    protected $casts = [
+        'price' => 'decimal:2', //Permet d'ajouter les 2 décimales aux prix
+        'discount_price' => 'decimal:2',
+    ];
+
 }

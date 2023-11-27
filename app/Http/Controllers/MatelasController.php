@@ -12,17 +12,18 @@ class MatelasController extends Controller
     {
         return view('home', [
             'matelas' => Matelas::all(),
+            'title' => 'Tous les matelas',
         ]);
     }
 
     public function show($id)
     {
-        // SELECT * FROM matelas WHERE id = :id AND slug = :slug
-        $matelas = Matelas::where('id', $id)->first();
 
-        abort_if(! $matelas, 404);
+        $matelas = Matelas::findOrFail($id); //Afficher 1 matelas
+        return view('matelas/show', [
+            'matelas' => $matelas
+        ]);
 
-        return view('matelas/show', ['matelas' => $matelas]);
     }
 
     public function create()
@@ -40,9 +41,9 @@ class MatelasController extends Controller
             'name' => 'required',
             'brand' => 'required|in:BULTEX,DORSOLINE,DREAMWAY,EPEDA,MEMORYLINE',
             'size' => 'required|in:90x190,140x190,160x200,180x200,200x200',
-            'image' => 'required|url',
-            'price' => 'required',
-            'discount_price' => 'nullable',
+            'image' => 'url',
+            'price' => 'required|numeric|between:1,9999',
+            'discount_price' => 'nullable|numeric|between:1,9999',
             /*'platforms' => 'required|array',*/
             /*'platforms.*' => 'required|exists:platforms,id', */
         ]);
@@ -53,7 +54,7 @@ class MatelasController extends Controller
         $matelas->size = $request->size;
         $matelas->image = $request->image;
         $matelas->price = $request->price;
-        $matelas->discount_price = $request->input('discount_price', null);;
+        $matelas->discount_price = $request->input('discount_price', null);
         $matelas->save();
     
 
@@ -65,7 +66,9 @@ class MatelasController extends Controller
         $matelas = Matelas::findOrFail($id);
 
         return view('matelas/edit', [
-            'matelas' => $matelas
+            'matelas' => $matelas,
+            'brand' => ['BULTEX', 'DORSOLINE', 'DREAMWAY', 'EPEDA', 'MEMORYLINE'],
+            'size' => ['90x190', '140x190', '160x200', '180x200', '200x200'],
         ]);
     }
 
@@ -74,12 +77,12 @@ class MatelasController extends Controller
         $matelas = Matelas::findOrFail($id);
 
         $request->validate([
-            'name' => 'required|unique:matelas,name,'.$matelas->id,
+            'name' => 'required',
             'brand' => 'required|in:BULTEX,DORSOLINE,DREAMWAY,EPEDA,MEMORYLINE',
             'size' => 'required|in:90x190,140x190,160x200,180x200,200x200',
             'image' => 'required|url',
-            'price' => 'required|min:1',
-            'discount_price' => 'nullable',
+            'price' => 'required|numeric|between:1,9999',
+            'discount_price' => 'nullable|numeric|between:1,9999',
         ]);
 
        
@@ -89,7 +92,7 @@ class MatelasController extends Controller
         $matelas->size = $request->size;
         $matelas->image = $request->image;
         $matelas->price = $request->price;
-        $matelas->discount_price = $request->input('discount_price' ?? null);
+        $matelas->discount_price = $request->input('discount_price', null);
         $matelas->save();
 
         return redirect('/matelas')->with('message', 'Le matelas a été modifié.');

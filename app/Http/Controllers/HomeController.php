@@ -10,6 +10,7 @@ class HomeController extends Controller
     {
         return view('home', [
             'matelas' => Matelas::latest('updated_at')->limit(3)->get(),
+            'title' => 'Les derniers matelas modifiés'
         ]);
     }
 }
