@@ -84,7 +84,6 @@ class MatelasController extends Controller
         ]);
 
        
-        $matelas = new Matelas();
         $matelas->name = $request->name;
         $matelas->brand = $request->brand;
         $matelas->size = $request->size;
