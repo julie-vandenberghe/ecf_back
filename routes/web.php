@@ -24,9 +24,9 @@ Route::get('/', [HomeController::class, 'index']);
 
 
 Route::get('/matelas', [MatelasController::class, 'index']);
-Route::get('/matelas/{id}', [MatelasController::class, 'show']);
 Route::get('/matelas/nouveau', [MatelasController::class, 'create']);
 Route::post('/matelas/nouveau', [MatelasController::class, 'store']);
+Route::get('/matelas/{id}', [MatelasController::class, 'show']);
 Route::get('/matelas/{id}/modifier', [MatelasController::class, 'edit']);
 Route::post('/matelas/{id}/modifier', [MatelasController::class, 'update']);
 Route::get('/matelas/{id}/supprimer', [MatelasController::class, 'destroy']);
