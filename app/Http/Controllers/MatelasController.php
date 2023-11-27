@@ -75,19 +75,21 @@ class MatelasController extends Controller
 
         $request->validate([
             'name' => 'required|unique:matelas,name,'.$matelas->id,
+            'brand' => 'required|in:BULTEX,DORSOLINE,DREAMWAY,EPEDA,MEMORYLINE',
+            'size' => 'required|in:90x190,140x190,160x200,180x200,200x200',
             'image' => 'required|url',
-            /* 'active' => 'boolean',
-            'company' => 'required',
-            'genres' => 'required|array',
-            'genres.*' => 'required|in:'.implode(',', ['Aventure', 'Beat \'em up', 'FPS', 'MMO', 'RPG']),
-            'released_at' => 'required|date',
-            'platforms' => 'required|array',
-            'platforms.*' => 'required|exists:platforms,id', */
+            'price' => 'required|min:1',
+            'discount_price' => 'nullable',
         ]);
 
+       
         $matelas = new Matelas();
         $matelas->name = $request->name;
+        $matelas->brand = $request->brand;
+        $matelas->size = $request->size;
         $matelas->image = $request->image;
+        $matelas->price = $request->price;
+        $matelas->discount_price = $request->input('discount_price' ?? null);
         $matelas->save();
 
         return redirect('/matelas')->with('message', 'Le matelas a été modifié.');

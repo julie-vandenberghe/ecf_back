@@ -22,9 +22,7 @@
                     @error('brand')
                         <div class="text-red-500">⚠️ {{ $message }}</div>
                     @enderror
-                    {{-- <input name="brand" class="border-0 border-b focus:ring-0 w-full"  value="{{ old('brand') }}"> --}}
-
-                    <select name="brand" id="brand">
+                    <select name="brand" class="border-0 border-b focus:ring-0 w-full"> {{-- @todo : garder le champ renseigné en mémoire lorsqu'il y a un erreur dans le form --}}
                         <option value="">Choisir une marque :</option>
                         @foreach ($brand as $marque)
                             <option value="{{$marque}}">{{$marque}}</option>
@@ -36,7 +34,12 @@
                     @error('size')
                         <div class="text-red-500">⚠️ {{ $message }}</div>
                     @enderror
-                    <input name="size" class="border-0 border-b focus:ring-0 w-full"  value="{{ old('size') }}">
+                    <select name="size" class="border-0 border-b focus:ring-0 w-full">
+                        <option value="">Choisir une taille :</option>
+                        @foreach ($size as $taille)
+                            <option value="{{$taille}}">{{$taille}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="mb-4">
                     <label for="image" class="block">Url de l'image *</label>
@@ -57,7 +60,7 @@
                     @error('price')
                         <div class="text-red-500">⚠️ {{ $message }}</div>
                     @enderror
-                    <input type="text" name="discount_price" class="border-0 border-b focus:ring-0 w-full"  value="{{ old('discount_price') }}">
+                    <input type="text" name="discount_price" class="border-0 border-b focus:ring-0 w-full"  value="">
                 </div>
         
                 <div class="container mx-0 min-w-full flex flex-col items-center">
