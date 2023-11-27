@@ -15,12 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Matelas::factory(4)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        
+        //La ligne ci-dessous permet de créer de fausses données avec fake
+        //Matelas::factory(4)->create();
+
         Matelas::factory()->create([
             'name' => 'Matelas Confort+',
             'brand' => 'EPEDA',
@@ -54,6 +53,24 @@ class DatabaseSeeder extends Seeder
             'size' => '160x200',
             'image' => 'https://media.literieprivee.com/904-large_default/matelas-memoire-de-forme-bultex-body-up-160x200.jpg',
             'price' => '1019.00',
+            'discount_price' => '0',
+        ]);
+
+        Matelas::factory()->create([
+            'name' => 'Matelas Confort Ultime',
+            'brand' => 'EPEDA',
+            'size' => '140x190',
+            'image' => 'https://cdn.laredoute.com/products/8/c/d/8cdef6938ae5f3122fdaa6c6bc5cc6dc.jpg?width=1200&dpr=1',
+            'price' => '999.00',
+            'discount_price' => '0',
+        ]);
+
+        Matelas::factory()->create([
+            'name' => 'Matelas Tout Doux',
+            'brand' => 'BULTEX',
+            'size' => '140x190',
+            'image' => 'https://cdn.laredoute.com/products/7/e/0/7e09e5b8ecec28cdd0f7d85c23a064cb.jpg?width=1200&dpr=1',
+            'price' => '999.00',
             'discount_price' => '0',
         ]);
     }

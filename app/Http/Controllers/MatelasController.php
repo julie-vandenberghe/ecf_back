@@ -44,8 +44,6 @@ class MatelasController extends Controller
             'image' => 'url',
             'price' => 'required|numeric|between:1,9999',
             'discount_price' => 'nullable|numeric|between:1,9999',
-            /*'platforms' => 'required|array',*/
-            /*'platforms.*' => 'required|exists:platforms,id', */
         ]);
 
         $matelas = new Matelas();
@@ -105,14 +103,4 @@ class MatelasController extends Controller
         return redirect('/matelas')->with('message', 'Le matelas a été supprimé.');
     }
 
-   /*  public function enable($id)
-    {
-        $matelas = Matelas::findOrFail($id);
-        //@todo $matelas->active = !$matelas->active;
-        $matelas->save();
-
-        //@todo $newState = $matelas->active ? 'activé' : 'désactivé';
-
-        return redirect('/matelas')->with('message', 'Le matelas a été '.$newState.'.');
-    } */
 }
