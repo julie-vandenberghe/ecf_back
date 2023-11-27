@@ -25,7 +25,7 @@
                     <select name="brand" class="border-0 border-b focus:ring-0 w-full"> {{-- @todo : garder le champ renseigné en mémoire lorsqu'il y a un erreur dans le form --}}
                         <option value="">Choisir une marque :</option>
                         @foreach ($brand as $marque)
-                            <option value="{{$marque}}">{{$marque}}</option>
+                            <option value="{{$marque}}" @if(old('brand') == $marque) selected @endif>{{$marque}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -37,7 +37,7 @@
                     <select name="size" class="border-0 border-b focus:ring-0 w-full">
                         <option value="">Choisir une taille :</option>
                         @foreach ($size as $taille)
-                            <option value="{{$taille}}">{{$taille}}</option>
+                            <option value="{{$taille}}" @if(old('size') == $taille) selected @endif>{{$taille}}</option>
                         @endforeach
                     </select>
                 </div>
