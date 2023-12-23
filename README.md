@@ -11,6 +11,7 @@ Contexte : Monsieur Dodo travaille en magasin chez Literie3000 avec des catalogu
 - Back-end : PHP, mySql, Laravel
 
 ## Screenshot
+![Screenshot page d'accueil](https://github.com/julie-vandenberghe/ecf_back/assets/120843391/b9b2ba97-1748-4ade-aefa-a658ddc0a859)
 
 ## Installation
 
