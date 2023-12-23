@@ -17,4 +17,9 @@ class Matelas extends Model
         'discount_price' => 'decimal:2',
     ];
 
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class, 'id');
+    }
+
 }
