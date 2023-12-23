@@ -28,7 +28,7 @@
                             <option value="{{$marque}}" @if(old('brand') == $marque) selected @endif>{{$marque}}</option>
                         @endforeach --}}
                         @foreach ($brand as $marque)
-                        <option value="{{$marque->id}}" @if(old('brand_id') == $marque->id) selected @endif>{{$marque->name}}</option>    
+                        <option value="{{$marque->id}}" @if(old('brand_id', $matelas->brand_id) == $marque->id) selected @endif>{{$marque->name}}</option>    
                         @endforeach
                     </select>
                 </div>
