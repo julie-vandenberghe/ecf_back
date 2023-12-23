@@ -19,7 +19,9 @@ class Matelas extends Model
 
     public function brand()
     {
-        return $this->belongsTo(Brand::class, 'id');
+        return $this->belongsTo(Brand::class, brand_id); //Ici, équivalent de : select * from `brands` where `brands.id` = brand_id limit 1
+        // Optionnel : on peut indiquer la clé étrangère en 2e paramétre ("brand_id")
+        //return $this->hasOne(Brand::class, 'id'); //select * from `brands` where `brands.id` = brand_id and `brands`.`id` is not null limit 1
     }
 
 }

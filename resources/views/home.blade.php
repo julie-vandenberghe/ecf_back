@@ -22,7 +22,7 @@
                 <div class="w-2/3 px-10 text-center">
                     <h2 class="text-2xl font-bold text-[#144284] pt-4 pb-4">{{ $mattress->name }}</h2>
                     <p class="mb-2">
-                        <strong>Marque : </strong>{{$mattress->brand}}
+                        <strong>Marque : </strong>{{ $mattress->brand->name }}
                     </p>
                     <p class="mb-2">
                         <strong>Taille : </strong>{{$mattress->size}}
