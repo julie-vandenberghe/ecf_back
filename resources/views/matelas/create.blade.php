@@ -7,7 +7,7 @@
 
 
 
-    <form method="post">
+    <form method="post" class="w-[300px]">
         @csrf {{-- Anytime you define an HTML form in your application, you should include a hidden CSRF token field in the form so that the CSRF protection middleware can validate the request.--}}
 
                 <div class="mb-4">
@@ -22,10 +22,13 @@
                     @error('brand')
                         <div class="text-red-500">⚠️ {{ $message }}</div>
                     @enderror
-                    <select name="brand" class="border-0 border-b focus:ring-0 w-full"> {{-- @todo : garder le champ renseigné en mémoire lorsqu'il y a un erreur dans le form --}}
+                    <select name="brand_id" class="border-0 border-b focus:ring-0 w-full"> 
                         <option value="">Choisir une marque :</option>
-                        @foreach ($brand as $marque)
+                        {{-- @foreach ($brand as $marque)
                             <option value="{{$marque}}" @if(old('brand') == $marque) selected @endif>{{$marque}}</option>
+                        @endforeach --}}
+                        @foreach ($brand as $marque)
+                        <option value="{{$marque->id}}" @if(old('brand_id') == $marque->id) selected @endif>{{$marque->name}}</option>    
                         @endforeach
                     </select>
                 </div>

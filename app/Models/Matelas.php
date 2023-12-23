@@ -17,9 +17,9 @@ class Matelas extends Model
         'discount_price' => 'decimal:2',
     ];
 
-    public function brand()
+    public function brands()
     {
-        return $this->belongsTo(Brand::class); //Ici, équivalent de : select * from `brands` where `brands.id` = brand_id limit 1
+        return $this->belongsTo(Brand::class, 'brand_id'); //Ici, équivalent de : select * from `brands` where `brands.id` = brand_id limit 1
         //return $this->hasOne(Brand::class, 'id'); //select * from `brands` where `brands.id` = brand_id and `brands`.`id` is not null limit 1
     }
 
