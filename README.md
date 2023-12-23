@@ -1,4 +1,16 @@
-# Laravel CRUD
+# Literie 3000 🛏️
+Laravel CRUD. ECF back durant ma formation chez M2i puis amélioré pendant mon temps libre
+Contexte : Monsieur Dodo travaille en magasin chez Literie3000 avec des catalogues papiers. Il aimerait avoir une solution dématérialisée afin d’administrer son catalogue. Il souhaiterait une solution interne qui lui permette :
+- de lister l’ensemble des matelas,
+- d’ajouter un matelas,
+- de modifier un matelas,
+- de supprimer un matelas.
+
+## Langages utilisés
+- Front-end : HTML, CSS (Tailwind)
+- Back-end : PHP, mySql, Laravel
+
+## Screenshot
 
 ## Installation
 
