@@ -18,7 +18,7 @@ class MatelasFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(1),
-            'brand' => $this->faker->sentence(1),
+            'brand_id' => $this->faker->numberBetween(1,5),
             'size' => $this->faker->sentence(1),
             'image' => $this->faker->imageUrl(),
             'price' => $this->faker->numberBetween(500, 1500),

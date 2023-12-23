@@ -7,7 +7,7 @@
 
 <h1 class="mb-4 text-4xl font-extrabold">Modifier le matelas {{ $matelas->name }}</h1>
 
-    <form method="post" class="w-[400px]">
+    <form method="post" class="w-[300px]">
         @csrf {{-- Anytime you define an HTML form in your application, you should include a hidden CSRF token field in the form so that the CSRF protection middleware can validate the request.--}}
 
                 <div class="mb-4">
