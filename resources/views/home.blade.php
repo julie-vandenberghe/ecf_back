@@ -16,7 +16,7 @@
             <div class="flex flex-wrap rounded-lg bg-white shadow-lg mb-6">
                 <div class="w-1/3">
                     <a href="/matelas/{{ $mattress->id }}">
-                        <img class="w-full rounded-l-lg" src="{{ $mattress->image }}" alt="{{ $mattress->name }}">
+                        <img class="object-cover h-full rounded-l-lg" src="{{ $mattress->image }}" alt="{{ $mattress->name }}">
                     </a>
                 </div>
                 <div class="w-2/3 px-10 text-center">
