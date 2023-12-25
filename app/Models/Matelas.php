@@ -23,4 +23,9 @@ class Matelas extends Model
         //return $this->hasOne(Brand::class, 'id'); //select * from `brands` where `brands.id` = brand_id and `brands`.`id` is not null limit 1
     }
 
+    public function dimensions()
+    {
+        return $this->belongsTo(Dimensions::class, 'dimension_id'); 
+    }
+
 }

@@ -27,7 +27,7 @@
                         <strong>Taille : </strong>{{$matelas->size}}
                     </p>
                     <p>
-                        <strong>Marque : </strong>{{$matelas->brand}}
+                        <strong>Marque : </strong>{{ $matelas->brands->name ?? 'Aucune marque associée' }}
                     </p>
                 </div>
             </div>

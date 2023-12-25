@@ -18,8 +18,8 @@
                     <input type="text" name="name" id="title" value="{{ old('name') }}" class="border-0 border-b focus:ring-0 w-full" >
                 </div>
                 <div class="mb-4">
-                    <label for="brand" class="block">Marque *</label>
-                    @error('brand')
+                    <label for="brand_id" class="block">Marque *</label>
+                    @error('brand_id')
                         <div class="text-red-500">⚠️ {{ $message }}</div>
                     @enderror
                     <select name="brand_id" class="border-0 border-b focus:ring-0 w-full"> 
@@ -28,7 +28,7 @@
                             <option value="{{$marque}}" @if(old('brand') == $marque) selected @endif>{{$marque}}</option>
                         @endforeach --}}
                         @foreach ($brand as $marque)
-                        <option value="{{$marque->id}}" @if(old('brand_id', $matelas->brand_id) == $marque->id) selected @endif>{{$marque->name}}</option>    
+                        <option value="{{$marque->id}}" @if(old('brand_id') == $marque->id) selected @endif>{{$marque->name}}</option>    
                         @endforeach
                     </select>
                 </div>

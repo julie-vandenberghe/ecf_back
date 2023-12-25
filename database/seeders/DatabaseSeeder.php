@@ -23,6 +23,10 @@ class DatabaseSeeder extends Seeder
         Brand::factory()->create(['name' => 'Epeda']);
         Brand::factory()->create(['name' => 'Memoryline']);
 
+        // Création des dimensions de matelas
+        Dimension::factory()->create(['name' => '90x190']);
+        Dimension::factory()->create(['name' => '140x190']);
+        Dimension::factory()->create(['name' => '160x200']);
         
         //La ligne ci-dessous permet de créer de fausses données avec fake
         //Matelas::factory(4)->create();
