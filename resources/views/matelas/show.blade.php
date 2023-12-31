@@ -24,7 +24,7 @@
                         <p>{{$matelas->price}}   €</p>       
                         @endif  
                     <p >
-                        <strong>Taille : </strong>{{$matelas->size}}
+                        <strong>Taille : </strong>{{ $matelas->sizes->pluck('name')->implode(', ') ?? 'Aucune taille associée' }}
                     </p>
                     <p>
                         <strong>Marque : </strong>{{ $matelas->brands->name ?? 'Aucune marque associée' }}

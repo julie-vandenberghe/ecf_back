@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
-            $table->text('size');
+            //$table->foreignId('size_id')->constrained()->cascadeOnDelete();
             $table->string('image');
             $table->float('price');
             $table->float('discount_price')->nullable();

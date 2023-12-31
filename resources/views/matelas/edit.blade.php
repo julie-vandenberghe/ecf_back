@@ -18,8 +18,8 @@
                     <input type="text" name="name" id="title" value="{{old('name', $matelas->name)}}" class="border-0 border-b focus:ring-0 w-full" >
                 </div>
                 <div class="mb-4">
-                    <label for="brand" class="block">Marque *</label>
-                    @error('brand')
+                    <label for="brand_id" class="block">Marque *</label>
+                    @error('brand_id')
                         <div class="text-red-500">⚠️ {{ $message }}</div>
                     @enderror
                     <select name="brand_id" class="border-0 border-b focus:ring-0 w-full">
@@ -30,14 +30,14 @@
                     </select>
                 </div>
                 <div class="mb-4">
-                    <label for="size" class="block">Taille *</label>
-                    @error('size')
+                    <label for="size_id" class="block">Taille *</label>
+                    @error('size_id')
                         <div class="text-red-500">⚠️ {{ $message }}</div>
                     @enderror
-                    <select name="size" class="border-0 border-b focus:ring-0 w-full">
+                    <select name="size_id" class="border-0 border-b focus:ring-0 w-full">
                         <option value="">Choisir une taille :</option>
                         @foreach ($size as $taille)
-                            <option value="{{$taille}}" @if(old('size', $matelas->size) == $taille) selected @endif>{{$taille}}</option>
+                            <option value="{{$taille->id}}" @if(old('size_id', $matelas->size_id) == $taille->id) selected @endif>{{$taille->name}}</option>
                         @endforeach
                     </select>
                 </div>

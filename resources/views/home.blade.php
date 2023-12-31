@@ -25,7 +25,7 @@
                         <strong>Marque : </strong>{{ $mattress->brands->name ?? 'Aucune marque associée' }}
                     </p>
                     <p class="mb-2">
-                        <strong>Taille : </strong>{{$mattress->size}}
+                        <strong>Taille : </strong>{{-- {{ $mattress->sizes->name ?? 'Aucune marque associée' }} --}}{{ $mattress->sizes->pluck('name')->implode(', ') }}
                     </p>
                     
                     @if ($mattress->discount_price > 0) 
