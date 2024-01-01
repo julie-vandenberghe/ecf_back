@@ -34,12 +34,18 @@
                     @error('size_id')
                         <div class="text-red-500">⚠️ {{ $message }}</div>
                     @enderror
-                    <select name="size_id" class="border-0 border-b focus:ring-0 w-full">
+                    {{-- <select name="size_id" class="border-0 border-b focus:ring-0 w-full">
                         <option value="">Choisir une taille :</option>
                         @foreach ($size as $taille)
                             <option value="{{$taille->id}}" @if(old('size_id', $matelas->size_id) == $taille->id) selected @endif>{{$taille->name}}</option>
                         @endforeach
-                    </select>
+                    </select> --}}
+                    @foreach ($size as $taille)
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" name="sizes[]" id="sizes-{{ $taille->id }}" value="{{ $taille->id }}" @checked(in_array($taille->id, old('sizes', $matelas->sizes->pluck('id')->all())))>
+                    <label for="sizes-{{ $taille->id }}">{{ $taille->name }}</label>
+                </div>
+            @endforeach
                 </div>
                 <div class="mb-4">
                     <label for="image" class="block">Url de l'image *</label>

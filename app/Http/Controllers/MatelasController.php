@@ -50,9 +50,9 @@ class MatelasController extends Controller
             'image' => 'url',
             'price' => 'required|numeric|between:1,9999',
             'discount_price' => 'nullable|numeric|between:1,9999',
-            //'brand' => 'required|array',
             'brand.*' => 'required|exists:brands,id',
-            'size.*' => 'required|exists:sizes,id',
+            'sizes' => 'required|array',
+            'sizes.*' => 'required|exists:sizes,id',
         ]);
 
         $matelas = new Matelas();
@@ -103,7 +103,6 @@ class MatelasController extends Controller
         ]);
 
        
-        $matelas = new Matelas();
         $matelas->name = $request->name;
         //$matelas->brand = $request->brand;
         $matelas->brand_id = $request->brand_id;
